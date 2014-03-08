@@ -2,8 +2,8 @@
 
 void adding(uint64_t ret_addr) ;
 
-register uint64_t local_bp __asm__ ("rbp");
-register uint64_t local_sp __asm__ ("rsp");
+register uint64_t local_bp __asm__ ("r12");
+register uint64_t local_sp __asm__ ("r13");
 
 void adding(uint64_t ret_addr) {
 
