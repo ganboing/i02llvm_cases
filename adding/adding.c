@@ -1,5 +1,9 @@
 #include "../vpc_env/env.c"
 
+
+
+void adding(uint64_t ret_addr);
+
 void adding(uint64_t ret_addr) {
 	*((uint64_t*) (sp - 8)) = bp;
 	bp = sp - 8;
