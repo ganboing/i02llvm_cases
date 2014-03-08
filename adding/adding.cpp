@@ -1,10 +1,14 @@
 #include "../vpc_env/env.c"
 
-void adding(uint64_t& bp, uint64_t& sp, uint64_t ret_addr) ;
+void adding(uint64_t ret_addr) ;
 
-void adding(uint64_t& bp, uint64_t& sp, uint64_t ret_addr) {
-	uint64_t& local_sp = sp;
-	uint64_t& local_bp = bp;
+register uint64_t local_bp __asm__ ("rbp");
+register uint64_t local_sp __asm__ ("rsp");
+
+void adding(uint64_t ret_addr) {
+
+	//uint64_t local_sp ;
+	//uint64_t local_bp ;
 	*((uint64_t*) (local_sp - 8)) = local_bp;
 	local_bp = local_sp - 8;
 	local_sp = local_sp -0x10;
