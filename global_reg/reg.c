@@ -6,11 +6,13 @@ register uint64_t i0_R2 __asm__ ("r12");
 register uint64_t i0_R3 __asm__ ("r13");
 
 void test(void) {
-	uint64_t tmp = i0_R2;
-
-	*((uint64_t*) (i0_R2)) = i0_R3;
-
-	i0_R2 = tmp;
+	*((uint64_t*) (i0_SP - 8)) = i0_BP;
+	i0_BP = i0_SP - 0x8;
+	i0_SP -= 0x100;
+	i0_SP = i0_BP;
+	i0_BP = *((uint64_t*) i0_SP);
+	i0_SP += 0x100;
+	return;
 }
 
 void add(uint64_t ret_addr) {
