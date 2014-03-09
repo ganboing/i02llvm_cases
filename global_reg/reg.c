@@ -1,7 +1,7 @@
 #include <stdint.h>
 
 register uint64_t i0_BP __asm__ ("rbp");
-register uint64_t i0_SP __asm__ ("r13");
+register uint64_t i0_SP __asm__ ("rsp");
 
 void test(void)
 {
