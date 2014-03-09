@@ -11,7 +11,7 @@ void test(void) {
 	i0_SP -= 0x100;
 	i0_SP = i0_BP;
 	i0_BP = *((uint64_t*) i0_SP);
-	i0_SP += 0x100;
+	i0_SP += 0x8;
 	return;
 }
 
