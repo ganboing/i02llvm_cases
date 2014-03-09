@@ -18,7 +18,7 @@ void test(void) {
 uint64_t testptr( uint64_t val)
 {
 	*((uint64_t*) (i0_SP - 8)) = val;
-	*((uint64_t*) (i0_SP - 0x10)) = 0;
+	i0_BP = i0_SP - 0x8;
 	val = *((uint64_t*) (i0_SP - 8));
 	return val;
 }
