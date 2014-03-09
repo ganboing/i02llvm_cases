@@ -15,6 +15,14 @@ void test(void) {
 	return;
 }
 
+uint64_t testptr(uint64_t* p, uint64_t val)
+{
+	*p = val;
+	*(p+1) = 1;
+	val = *p;
+	return *p;
+}
+
 void add(uint64_t ret_addr) {
 	*((uint64_t*) (i0_SP - 8)) = i0_BP;
 	i0_BP = i0_SP - 0x10;
