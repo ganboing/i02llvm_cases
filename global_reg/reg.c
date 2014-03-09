@@ -1,6 +1,6 @@
 #include <stdint.h>
 
-register uint64_t i0_BP __asm__ ("r12");
+register uint64_t i0_BP __asm__ ("rbp");
 register uint64_t i0_SP __asm__ ("r13");
 
 void test(void)
